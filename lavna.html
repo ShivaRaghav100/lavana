@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lavanya Enterprises - Solar Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #003366; /* Deep blue from Lavanya logo */
+            --accent-yellow: #FFC107; /* Solar yellow */
+            --light-gray: #f4f4f4;
+            --text-dark: #333;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- Header Section --- */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .top-bar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent-yellow);
+        }
+
+        .shop-title h1 {
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .shop-title p {
+            font-size: 0.9rem;
+            color: var(--accent-yellow);
+        }
+
+        .contact-header {
+            text-align: right;
+        }
+
+        .contact-header a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .contact-header a i {
+            margin-right: 5px;
+            color: var(--accent-yellow);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.8)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: var(--accent-yellow);
+            max-width: 800px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: var(--primary-blue);
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .cta-button:active {
+            transform: scale(0.95);
+        }
+
+        /* --- Brands Section --- */
+        .brands-section {
+            background: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .section-title {
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-yellow);
+        }
+
+        .brand-grid {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .brand-card {
+            border: 1px solid #ddd;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            background: #f9f9f9;
+            flex: 1 1 150px; /* Responsive flex grow */
+            max-width: 200px;
+        }
+
+        /* --- Calculator Section --- */
+        .calculator-section {
+            background-color: #e3f2fd;
+            padding: 60px 20px;
+        }
+
+        .calculator-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 15px; /* Larger touch target */
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #fff;
+        }
+
+        .price-result {
+            margin-top: 30px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 10px;
+            display: none; 
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .price-row.final {
+            border-bottom: none;
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: var(--accent-yellow);
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid var(--white);
+        }
+
+        /* --- Warranty Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent-yellow);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+        }
+
+        /* --- Contact Form Section --- */
+        .contact-section {
+            background: var(--white);
+            padding: 60px 20px;
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .contact-info, .contact-form-wrapper {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .address-box {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-blue);
+        }
+        
+        .address-box h4 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #002244;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
+            color: #888;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           MOBILE RESPONSIVE STYLES
+           ========================================= */
+        @media (max-width: 768px) {
+            
+            /* Header Adjustments */
+            .top-bar {
+                flex-direction: column;
+                gap: 5px;
+                text-align: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .logo-section {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .shop-title h1 {
+                font-size: 1.5rem;
+            }
+
+            .contact-header {
+                text-align: center;
+                width: 100%;
+                background: rgba(255,255,255,0.1);
+                padding: 10px;
+                border-radius: 8px;
+            }
+
+            /* Hero Adjustments */
+            .hero {
+                min-height: 50vh;
+                padding: 60px 20px;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            /* Calculator Adjustments */
+            .calculator-container {
+                padding: 20px;
+            }
+
+            .price-row {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 5px;
+            }
+            
+            .price-row.final {
+                font-size: 1.4rem;
+            }
+
+            /* Contact Adjustments */
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-info, .contact-form-wrapper {
+                min-width: 100%;
+            }
+            
+            /* General text adjustments */
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <span class="gst-info">GSTIN: 09EUPPK9206P1ZM</span>
+            <span><i class="fas fa-map-marker-alt"></i> Bulandshahr, UP</span>
+        </div>
+        <div class="nav-container">
+            <div class="logo-section">
+                <i class="fas fa-sun logo-icon"></i>
+                <div class="shop-title">
+                    <h1>Lavanya Enterprises</h1>
+                    <p>Up Nida and Solar Solutions</p>
+                </div>
+            </div>
+            <div class="contact-header">
+                <a href="tel:8126261106"><i class="fas fa-phone-alt"></i> Aman: 8126261106</a>
+                <a href="tel:7078709458"><i class="fas fa-phone-alt"></i> Shivam: 7078709458</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h2>Power Your Home with the Sun!</h2>
+        <p>Save up to 80% on Electricity Bills | Clean Energy</p>
+        <a href="#calculator" class="cta-button">Check Price & Subsidy</a>
+    </section>
+
+    <section class="brands-section">
+        <h3 class="section-title">Our Partners</h3>
+        <div class="brand-grid">
+            <div class="brand-card">Adani Solar</div>
+            <div class="brand-card">Tata Power Solar</div>
+            <div class="brand-card">Waaree Energies</div>
+            <div class="brand-card">Vikram Solar</div>
+            <div class="brand-card">Goldi Solar</div>
+            <div class="brand-card">Jakson Group</div>
+            <div class="brand-card">UTL Solar</div>
+        </div>
+    </section>
+
+    <section class="features-grid">
+        <div class="feature-card">
+            <i class="fas fa-solar-panel feature-icon"></i>
+            <h3>25 Year Warranty</h3>
+            <p>On Solar Panels Performance</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-bolt feature-icon"></i>
+            <h3>10 Year Warranty</h3>
+            <p>On Solar Inverters</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-car-battery feature-icon"></i>
+            <h3>5 Year Warranty</h3>
+            <p>On Solar Batteries</p>
+        </div>
+        <div class="feature-card">
+            <i class="fas fa-tools feature-icon"></i>
+            <h3>2 Year Service</h3>
+            <p>Cleaning & Maintenance Included</p>
+        </div>
+    </section>
+
+    <section id="calculator" class="calculator-section">
+        <div class="calculator-container">
+            <h3 style="text-align: center; color: var(--primary-blue); margin-bottom: 20px;">
+                <i class="fas fa-calculator"></i> Price Calculator
+            </h3>
+            <p style="text-align: center; margin-bottom: 20px;">Select your system size:</p>
+            
+            <div class="form-group">
+                <select id="capacitySelect" onchange="calculatePrice()">
+                    <option value="0">-- Select Capacity --</option>
+                    <option value="1">1 KW System</option>
+                    <option value="2">2 KW System</option>
+                    <option value="3">3 KW System</option>
+                    <option value="4">4 KW System</option>
+                    <option value="5">5 KW System</option>
+                    <option value="6">6 KW System</option>
+                    <option value="7">7 KW System</option>
+                    <option value="8">8 KW System</option>
+                    <option value="9">9 KW System</option>
+                    <option value="10">10 KW System</option>
+                </select>
+            </div>
+
+            <div id="resultCard" class="price-result">
+                <div class="price-row">
+                    <span>Estimated Cost:</span>
+                    <span id="totalCost">₹0</span>
+                </div>
+                <div class="price-row" style="color: #ffeb3b;">
+                    <span>Subsidy (Grant):</span>
+                    <span id="subsidy">₹0</span>
+                </div>
+                <div class="price-row final">
+                    <span>Your Cost:</span>
+                    <span id="effectiveCost">₹0</span>
+                </div>
+                <p style="font-size: 0.8rem; margin-top: 15px; text-align: center; opacity: 0.8;">* Estimates based on current rate card. Final price may vary.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h3 class="section-title" style="display:block; text-align:center;">Contact Us</h3>
+        <div class="contact-container">
+            
+            <div class="contact-info">
+                <div class="address-box">
+                    <h4><i class="fas fa-store"></i> Shop Address</h4>
+                    <p>Brahmaputra Complex, Near Kala Aam,<br>D.M Road, Bulandshahr, UP</p>
+                    <br>
+                    <a href="https://maps.app.goo.gl/ogsAfzCLF4LJZMw4A?g_st=awb" target="_blank" class="cta-button" style="font-size: 0.9rem; padding: 12px 20px; display: inline-block; text-align: center; width: 100%;">
+                        <i class="fas fa-map-marked-alt"></i> Open in Maps
+                    </a>
+                </div>
+                
+                <div class="address-box">
+                    <h4><i class="fas fa-phone"></i> Call Us</h4>
+                    <p><strong>Aman:</strong> +91 81262 61106</p>
+                    <p><strong>Shivam:</strong> +91 70787 09458</p>
+                </div>
+            </div>
+
+            <div class="contact-form-wrapper">
+                <div class="address-box" style="background: white; border: 1px solid #ddd; border-left: 5px solid var(--accent-yellow);">
+                    <h4 style="margin-bottom: 20px;">Request Callback</h4>
+                    <form onsubmit="submitForm(event)">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" placeholder="Enter full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile Number</label>
+                            <input type="tel" placeholder="Enter mobile number" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email ID</label>
+                            <input type="email" placeholder="Enter email address" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Lavanya Enterprises.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px;">Empowering Homes with Solar Energy</p>
+    </footer>
+
+    <script>
+        // Pricing Data
+        const pricingData = {
+            1: { cost: 65000, subsidy: 45000, effective: 20000 },
+            2: { cost: 130000, subsidy: 90000, effective: 40000 },
+            3: { cost: 180000, subsidy: 108000, effective: 72000 },
+            4: { cost: 240000, subsidy: 108000, effective: 132000 },
+            5: { cost: 275000, subsidy: 108000, effective: 167000 },
+            6: { cost: 330000, subsidy: 108000, effective: 222000 },
+            7: { cost: 385000, subsidy: 108000, effective: 277000 },
+            8: { cost: 400000, subsidy: 108000, effective: 292000 },
+            9: { cost: 450000, subsidy: 108000, effective: 342000 },
+            10: { cost: 500000, subsidy: 108000, effective: 392000 }
+        };
+
+        function calculatePrice() {
+            const capacity = document.getElementById('capacitySelect').value;
+            const resultCard = document.getElementById('resultCard');
+            
+            if (capacity == 0) {
+                resultCard.style.display = 'none';
+                return;
+            }
+
+            const data = pricingData[capacity];
+            
+            document.getElementById('totalCost').innerText = '₹' + data.cost.toLocaleString('en-IN');
+            document.getElementById('subsidy').innerText = '- ₹' + data.subsidy.toLocaleString('en-IN');
+            document.getElementById('effectiveCost').innerText = '₹' + data.effective.toLocaleString('en-IN');
+            
+            resultCard.style.display = 'block';
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            alert("Thank you! Your details have been submitted to Lavanya Enterprises.");
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
